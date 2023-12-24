@@ -25,7 +25,15 @@ class _SplashScreenState extends State<SplashScreen> {
                 image: AssetImage('assets/images/Intro.jpg'),
               ),
             ),
-          ),
+          )
+              .animate()
+              .fadeIn()
+              .then()
+              // runs after the above w/new duration
+              .blurXY(
+                  begin: 2,
+                  end: 0,
+                  duration: const Duration(milliseconds: 600)),
           Positioned(
             top: 100,
             child: Text(
