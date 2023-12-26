@@ -3,6 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart' as svg;
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:glass_kit/glass_kit.dart';
+import 'package:nft_nike/presentation/home/home_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
             width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               image: DecorationImage(
+                fit: BoxFit.cover,
                 image: AssetImage('assets/images/Intro.jpg'),
               ),
             ),
@@ -31,9 +34,12 @@ class _SplashScreenState extends State<SplashScreen> {
               .then()
               // runs after the above w/new duration
               .blurXY(
-                  begin: 2,
-                  end: 0,
-                  duration: const Duration(milliseconds: 600)),
+                begin: 2,
+                end: 0,
+                duration: const Duration(
+                  milliseconds: 600,
+                ),
+              ),
           Positioned(
             top: 100,
             child: Text(
@@ -112,7 +118,16 @@ class _SplashScreenState extends State<SplashScreen> {
                   backgroundColor: Colors.transparent,
                   // surfaceTintColor: Colors.green,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  // Navigator.of(context)
+                  //     .pushReplacement(MaterialPageRoute(builder: (context) {
+                  //   return HomeScreen();
+                  // }));
+                  Navigator.of(context).push(PageTransition(
+                      type: PageTransitionType.bottomToTopPop,
+                      child: HomeScreen(),
+                      childCurrent: SplashScreen()));
+                },
                 child: Text(
                   'START',
                   style: Theme.of(context).textTheme.bodySmall,
