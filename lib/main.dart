@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nft_nike/presentation/nft_screen.dart/nft_screen.dart';
 import 'package:nft_nike/presentation/splash/splash_screen.dart';
 
 void main() {
-
   runApp(
     const MyApp(),
   );
@@ -54,9 +54,24 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w900,
             color: Colors.white,
           ),
+          titleLarge: GoogleFonts.overpass(
+            fontSize: 55,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+          ),
+          displayMedium: GoogleFonts.overpass(
+            fontSize: 45,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+          ),
+          headlineMedium: GoogleFonts.overpass(
+            fontSize: 19,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+          ),
         ),
       ),
-      home: const SplashScreen(),
+      home: const NftScreen(),
       title: 'NFT Nike',
     );
   }
