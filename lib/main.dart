@@ -3,7 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nft_nike/presentation/splash/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -29,6 +32,26 @@ class MyApp extends StatelessWidget {
           bodySmall: GoogleFonts.overpass(
             fontSize: 20,
             fontWeight: FontWeight.w400,
+            color: Colors.white,
+          ),
+          displaySmall: GoogleFonts.overpass(
+            fontSize: 13,
+            fontWeight: FontWeight.w400,
+            color: Colors.white.withOpacity(0.6),
+          ),
+          labelSmall: GoogleFonts.overpass(
+            fontSize: 10,
+            fontWeight: FontWeight.w400,
+            color: Colors.white,
+          ),
+          labelMedium: GoogleFonts.overpass(
+            fontSize: 14,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+          ),
+          titleMedium: GoogleFonts.overpass(
+            fontSize: 26,
+            fontWeight: FontWeight.w900,
             color: Colors.white,
           ),
         ),

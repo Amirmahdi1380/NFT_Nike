@@ -124,9 +124,10 @@ class _SplashScreenState extends State<SplashScreen> {
                   //   return HomeScreen();
                   // }));
                   Navigator.of(context).push(PageTransition(
+                      duration: const Duration(milliseconds: 400),
                       type: PageTransitionType.bottomToTopPop,
-                      child: HomeScreen(),
-                      childCurrent: SplashScreen()));
+                      child: const HomeScreen(),
+                      childCurrent: const SplashScreen()));
                 },
                 child: Text(
                   'START',
