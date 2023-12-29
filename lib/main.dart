@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const NftScreen(),
+      home: const SplashScreen(),
       title: 'NFT Nike',
     );
   }

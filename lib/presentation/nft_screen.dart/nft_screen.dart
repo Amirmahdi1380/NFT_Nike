@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 
 class NftScreen extends StatefulWidget {
-  const NftScreen({super.key});
+  final String imagePath;
+  final String titleName;
+  final String tag;
+  final String time;
+  final String price;
+
+  const NftScreen(
+      this.imagePath, this.titleName, this.tag, this.time, this.price,
+      {super.key});
 
   @override
   State<NftScreen> createState() => _NftScreenState();
@@ -28,16 +36,16 @@ class _NftScreenState extends State<NftScreen> {
               height: 70,
             ),
             const Header(),
-            title(context),
+            title(context, widget.titleName),
             const indicator(),
             Hero(
-              tag: 'grow',
+              tag: widget.tag,
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(35),
-                    child: Image.asset('assets/images/grow.jpg'),
+                    child: Image.asset(widget.imagePath),
                   ),
                   Positioned(
                     child: Container(
@@ -82,7 +90,7 @@ class _NftScreenState extends State<NftScreen> {
                           style: Theme.of(context).textTheme.displaySmall,
                         ),
                         Text(
-                          '13min',
+                          widget.time,
                           style: Theme.of(context).textTheme.titleMedium,
                         )
                       ],
@@ -104,7 +112,7 @@ class _NftScreenState extends State<NftScreen> {
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
                           Text(
-                            '3.98 ETH',
+                            widget.price,
                             style: Theme.of(context).textTheme.displayMedium,
                           ),
                           ElevatedButton(
@@ -132,7 +140,7 @@ class _NftScreenState extends State<NftScreen> {
     );
   }
 
-  Widget title(BuildContext context) {
+  Widget title(BuildContext context, String name) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Column(
@@ -152,7 +160,7 @@ class _NftScreenState extends State<NftScreen> {
             ],
           ),
           Text(
-            'GROWING UP',
+            name,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           Text(

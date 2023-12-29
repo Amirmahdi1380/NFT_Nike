@@ -1,7 +1,9 @@
 import 'dart:ui';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/scheduler/ticker.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:glass_kit/glass_kit.dart';
 
@@ -49,43 +51,46 @@ class _HomeScreenState extends State<HomeScreen>
               const SizedBox(
                 height: 50,
               ),
-              const headerWidget(),
+              FadeInDown(child: const headerWidget()),
               SizedBox(
                 height: 50,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    GlassContainer.clearGlass(
-                      height: 40,
-                      width: 89,
-                      color: const Color(0xff95C706),
-                      //blur: 10,
-                      borderRadius: BorderRadius.circular(20),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: SvgPicture.asset(
-                          'assets/images/chip-nike.svg',
+                child: FadeInLeft(
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      GlassContainer.clearGlass(
+                        height: 40,
+                        width: 89,
+                        color: const Color(0xff95C706),
+                        //blur: 10,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: SvgPicture.asset(
+                            'assets/images/chip-nike.svg',
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    createCustomGlassContainer(
-                        context: context, text: 'Photography'),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    createCustomGlassContainer(
-                        context: context, text: 'Editorial'),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    createCustomGlassContainer(context: context, text: 'Games'),
-                  ],
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      createCustomGlassContainer(
+                          context: context, text: 'Photography'),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      createCustomGlassContainer(
+                          context: context, text: 'Editorial'),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      createCustomGlassContainer(
+                          context: context, text: 'Games'),
+                    ],
+                  ),
                 ),
               ),
               Padding(
@@ -104,33 +109,35 @@ class _HomeScreenState extends State<HomeScreen>
                 padding: const EdgeInsets.only(left: 10),
                 child: SizedBox(
                   height: 290,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      createCustomCard(
-                          context: context,
-                          width: 217,
-                          title1: 'PICKLE RICK',
-                          title2: 'Konstantin Stupa',
-                          title3: '0.90 ETH',
-                          time: '8h49min',
-                          title4: 'oferta atual',
-                          imagePath: 'assets/images/Foto.jpg',
-                          heroTag: 'foto'),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      createCustomCard(
-                          context: context,
-                          width: 200,
-                          title1: 'SUNLIT',
-                          title2: 'Darius Anton',
-                          title3: '2.98 ETH',
-                          time: '2h23min',
-                          title4: 'oferta atual',
-                          imagePath: 'assets/images/sunlit.jpg',
-                          heroTag: 'sunlit'),
-                    ],
+                  child: FadeInLeft(
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        createCustomCard(
+                            context: context,
+                            width: 217,
+                            title1: 'PICKLE RICK',
+                            title2: 'Konstantin Stupa',
+                            title3: '0.90 ETH',
+                            time: '8h49min',
+                            title4: 'oferta atual',
+                            imagePath: 'assets/images/Foto.jpg',
+                            heroTag: 'foto'),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        createCustomCard(
+                            context: context,
+                            width: 200,
+                            title1: 'SUNLIT',
+                            title2: 'Darius Anton',
+                            title3: '2.98 ETH',
+                            time: '2h23min',
+                            title4: 'oferta atual',
+                            imagePath: 'assets/images/sunlit.jpg',
+                            heroTag: 'sunlit'),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -150,33 +157,35 @@ class _HomeScreenState extends State<HomeScreen>
                 padding: const EdgeInsets.only(left: 10),
                 child: SizedBox(
                   height: 290,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      createCustomCard(
-                          context: context,
-                          width: 217,
-                          title1: 'AVOCADO',
-                          title2: 'Andrey Prokopenko',
-                          title3: '1.92 ETH',
-                          time: '1h49min',
-                          title4: 'oferta atual',
-                          imagePath: 'assets/images/avocado.jpg',
-                          heroTag: 'avocado'),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      createCustomCard(
-                          context: context,
-                          width: 200,
-                          title1: 'GROWING UP',
-                          title2: 'Andrey Prokopenko',
-                          title3: '3.98 ETH',
-                          time: '13min',
-                          title4: 'oferta atual',
-                          imagePath: 'assets/images/grow.jpg',
-                          heroTag: 'grow'),
-                    ],
+                  child: FadeInLeft(
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        createCustomCard(
+                            context: context,
+                            width: 217,
+                            title1: 'AVOCADO',
+                            title2: 'Andrey Prokopenko',
+                            title3: '1.92 ETH',
+                            time: '1h49min',
+                            title4: 'oferta atual',
+                            imagePath: 'assets/images/avocado.jpg',
+                            heroTag: 'avocado'),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        createCustomCard(
+                            context: context,
+                            width: 200,
+                            title1: 'GROWING UP',
+                            title2: 'Andrey Prokopenko',
+                            title3: '3.98 ETH',
+                            time: '13min',
+                            title4: 'oferta atual',
+                            imagePath: 'assets/images/grow.jpg',
+                            heroTag: 'grow'),
+                      ],
+                    ),
                   ),
                 ),
               ),
